@@ -1,0 +1,2 @@
+﻿table_name,row_count,unique_order_count,unique_customer_count,total_payment_amount,total_product_amount,delivered_order_count,late_delivery_order_count,average_review_score,generated_at
+dwd_order_detail,99441,99441,96096,16008872.12,13591643.7,96476,6535,4.09,2026-06-22 21:09:51

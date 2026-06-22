@@ -1,0 +1,10 @@
+﻿source_file,ods_table,output_file,original_row_count,original_column_count,output_row_count,output_column_count,loaded_at,dt,status
+olist_customers_dataset.csv,ods_customers,data\ods\ods_customers.csv,99441,5,99441,7,2026-06-22 21:09:36,2026-06-22,success
+olist_orders_dataset.csv,ods_orders,data\ods\ods_orders.csv,99441,8,99441,10,2026-06-22 21:09:37,2026-06-22,success
+olist_order_items_dataset.csv,ods_order_items,data\ods\ods_order_items.csv,112650,7,112650,9,2026-06-22 21:09:37,2026-06-22,success
+olist_order_payments_dataset.csv,ods_order_payments,data\ods\ods_order_payments.csv,103886,5,103886,7,2026-06-22 21:09:38,2026-06-22,success
+olist_order_reviews_dataset.csv,ods_order_reviews,data\ods\ods_order_reviews.csv,99224,7,99224,9,2026-06-22 21:09:39,2026-06-22,success
+olist_products_dataset.csv,ods_products,data\ods\ods_products.csv,32951,9,32951,11,2026-06-22 21:09:39,2026-06-22,success
+olist_sellers_dataset.csv,ods_sellers,data\ods\ods_sellers.csv,3095,4,3095,6,2026-06-22 21:09:39,2026-06-22,success
+olist_geolocation_dataset.csv,ods_geolocation,data\ods\ods_geolocation.csv,1000163,5,1000163,7,2026-06-22 21:09:40,2026-06-22,success
+product_category_name_translation.csv,ods_product_category_translation,data\ods\ods_product_category_translation.csv,71,2,71,4,2026-06-22 21:09:45,2026-06-22,success

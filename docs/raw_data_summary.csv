@@ -1,0 +1,10 @@
+﻿file_name,table_name,row_count,column_count,full_row_duplicates,key_columns,key_duplicates
+olist_customers_dataset.csv,olist_customers_dataset,99441,5,0,customer_id,0
+olist_geolocation_dataset.csv,olist_geolocation_dataset,1000163,5,261831,,
+olist_order_items_dataset.csv,olist_order_items_dataset,112650,7,0,"order_id,order_item_id",0
+olist_order_payments_dataset.csv,olist_order_payments_dataset,103886,5,0,"order_id,payment_sequential",0
+olist_order_reviews_dataset.csv,olist_order_reviews_dataset,99224,7,0,review_id,814
+olist_orders_dataset.csv,olist_orders_dataset,99441,8,0,order_id,0
+olist_products_dataset.csv,olist_products_dataset,32951,9,0,product_id,0
+olist_sellers_dataset.csv,olist_sellers_dataset,3095,4,0,seller_id,0
+product_category_name_translation.csv,product_category_name_translation,71,2,0,product_category_name,0

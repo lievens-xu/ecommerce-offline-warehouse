@@ -1,0 +1,2 @@
+﻿table_name,row_count,start_date,end_date,total_order_count,total_valid_order_count,total_payment_amount,overall_aov,overall_delivery_rate,overall_late_delivery_rate,generated_at
+dws_daily_order_summary,634,2016-09-04,2018-10-17,99441,98207,16008872.12,160.9886,0.9702,0.0677,2026-06-22 21:09:53

@@ -1,0 +1,97 @@
+﻿check_time,layer,table_name,check_name,status,actual_value,expected_rule,message
+2026-06-22 21:09:55,ODS,ods_customers,file_existence_check,PASS,exists,file should exist,ods_customers.csv exists.
+2026-06-22 21:09:55,ODS,ods_customers,row_count_check,PASS,99441,row_count > 0,ods_customers row count is 99441.
+2026-06-22 21:09:55,ODS,ods_customers,technical_field_check_loaded_at,PASS,exists,loaded_at should exist,loaded_at field check for ods_customers.
+2026-06-22 21:09:55,ODS,ods_customers,technical_field_check_dt,PASS,exists,dt should exist,dt field check for ods_customers.
+2026-06-22 21:09:55,ODS,ods_orders,file_existence_check,PASS,exists,file should exist,ods_orders.csv exists.
+2026-06-22 21:09:55,ODS,ods_orders,row_count_check,PASS,99441,row_count > 0,ods_orders row count is 99441.
+2026-06-22 21:09:55,ODS,ods_orders,technical_field_check_loaded_at,PASS,exists,loaded_at should exist,loaded_at field check for ods_orders.
+2026-06-22 21:09:55,ODS,ods_orders,technical_field_check_dt,PASS,exists,dt should exist,dt field check for ods_orders.
+2026-06-22 21:09:55,ODS,ods_order_items,file_existence_check,PASS,exists,file should exist,ods_order_items.csv exists.
+2026-06-22 21:09:55,ODS,ods_order_items,row_count_check,PASS,112650,row_count > 0,ods_order_items row count is 112650.
+2026-06-22 21:09:55,ODS,ods_order_items,technical_field_check_loaded_at,PASS,exists,loaded_at should exist,loaded_at field check for ods_order_items.
+2026-06-22 21:09:55,ODS,ods_order_items,technical_field_check_dt,PASS,exists,dt should exist,dt field check for ods_order_items.
+2026-06-22 21:09:56,ODS,ods_order_payments,file_existence_check,PASS,exists,file should exist,ods_order_payments.csv exists.
+2026-06-22 21:09:56,ODS,ods_order_payments,row_count_check,PASS,103886,row_count > 0,ods_order_payments row count is 103886.
+2026-06-22 21:09:56,ODS,ods_order_payments,technical_field_check_loaded_at,PASS,exists,loaded_at should exist,loaded_at field check for ods_order_payments.
+2026-06-22 21:09:56,ODS,ods_order_payments,technical_field_check_dt,PASS,exists,dt should exist,dt field check for ods_order_payments.
+2026-06-22 21:09:56,ODS,ods_order_reviews,file_existence_check,PASS,exists,file should exist,ods_order_reviews.csv exists.
+2026-06-22 21:09:56,ODS,ods_order_reviews,row_count_check,PASS,99224,row_count > 0,ods_order_reviews row count is 99224.
+2026-06-22 21:09:56,ODS,ods_order_reviews,technical_field_check_loaded_at,PASS,exists,loaded_at should exist,loaded_at field check for ods_order_reviews.
+2026-06-22 21:09:56,ODS,ods_order_reviews,technical_field_check_dt,PASS,exists,dt should exist,dt field check for ods_order_reviews.
+2026-06-22 21:09:56,ODS,ods_products,file_existence_check,PASS,exists,file should exist,ods_products.csv exists.
+2026-06-22 21:09:56,ODS,ods_products,row_count_check,PASS,32951,row_count > 0,ods_products row count is 32951.
+2026-06-22 21:09:56,ODS,ods_products,technical_field_check_loaded_at,PASS,exists,loaded_at should exist,loaded_at field check for ods_products.
+2026-06-22 21:09:56,ODS,ods_products,technical_field_check_dt,PASS,exists,dt should exist,dt field check for ods_products.
+2026-06-22 21:09:56,ODS,ods_sellers,file_existence_check,PASS,exists,file should exist,ods_sellers.csv exists.
+2026-06-22 21:09:56,ODS,ods_sellers,row_count_check,PASS,3095,row_count > 0,ods_sellers row count is 3095.
+2026-06-22 21:09:56,ODS,ods_sellers,technical_field_check_loaded_at,PASS,exists,loaded_at should exist,loaded_at field check for ods_sellers.
+2026-06-22 21:09:56,ODS,ods_sellers,technical_field_check_dt,PASS,exists,dt should exist,dt field check for ods_sellers.
+2026-06-22 21:09:57,ODS,ods_geolocation,file_existence_check,PASS,exists,file should exist,ods_geolocation.csv exists.
+2026-06-22 21:09:57,ODS,ods_geolocation,row_count_check,PASS,1000163,row_count > 0,ods_geolocation row count is 1000163.
+2026-06-22 21:09:57,ODS,ods_geolocation,technical_field_check_loaded_at,PASS,exists,loaded_at should exist,loaded_at field check for ods_geolocation.
+2026-06-22 21:09:57,ODS,ods_geolocation,technical_field_check_dt,PASS,exists,dt should exist,dt field check for ods_geolocation.
+2026-06-22 21:09:57,ODS,ods_product_category_translation,file_existence_check,PASS,exists,file should exist,ods_product_category_translation.csv exists.
+2026-06-22 21:09:57,ODS,ods_product_category_translation,row_count_check,PASS,71,row_count > 0,ods_product_category_translation row count is 71.
+2026-06-22 21:09:57,ODS,ods_product_category_translation,technical_field_check_loaded_at,PASS,exists,loaded_at should exist,loaded_at field check for ods_product_category_translation.
+2026-06-22 21:09:57,ODS,ods_product_category_translation,technical_field_check_dt,PASS,exists,dt should exist,dt field check for ods_product_category_translation.
+2026-06-22 21:09:58,DWD,dwd_order_detail,file_existence_check,PASS,exists,file should exist,dwd_order_detail exists.
+2026-06-22 21:09:58,DWD,dwd_order_detail,row_count_check,PASS,99441,row_count > 0,dwd_order_detail row count is 99441.
+2026-06-22 21:09:58,DWS,dws_daily_order_summary,file_existence_check,PASS,exists,file should exist,dws_daily_order_summary exists.
+2026-06-22 21:09:58,DWS,dws_daily_order_summary,row_count_check,PASS,634,row_count > 0,dws_daily_order_summary row count is 634.
+2026-06-22 21:09:58,ADS,ads_daily_business_overview,file_existence_check,PASS,exists,file should exist,ads_daily_business_overview exists.
+2026-06-22 21:09:58,ADS,ads_daily_business_overview,row_count_check,PASS,634,row_count > 0,ads_daily_business_overview row count is 634.
+2026-06-22 21:09:59,DWD,dwd_order_detail,required_column_check_order_id,PASS,exists,order_id should exist,Required column check for order_id.
+2026-06-22 21:09:59,DWD,dwd_order_detail,required_column_check_customer_unique_id,PASS,exists,customer_unique_id should exist,Required column check for customer_unique_id.
+2026-06-22 21:09:59,DWD,dwd_order_detail,required_column_check_purchase_date,PASS,exists,purchase_date should exist,Required column check for purchase_date.
+2026-06-22 21:09:59,DWD,dwd_order_detail,required_column_check_order_status,PASS,exists,order_status should exist,Required column check for order_status.
+2026-06-22 21:09:59,DWD,dwd_order_detail,required_column_check_total_payment_amount,PASS,exists,total_payment_amount should exist,Required column check for total_payment_amount.
+2026-06-22 21:09:59,DWD,dwd_order_detail,required_column_check_total_product_amount,PASS,exists,total_product_amount should exist,Required column check for total_product_amount.
+2026-06-22 21:09:59,DWD,dwd_order_detail,required_column_check_total_freight_amount,PASS,exists,total_freight_amount should exist,Required column check for total_freight_amount.
+2026-06-22 21:09:59,DWD,dwd_order_detail,required_column_check_is_delivered,PASS,exists,is_delivered should exist,Required column check for is_delivered.
+2026-06-22 21:09:59,DWD,dwd_order_detail,required_column_check_is_late_delivery,PASS,exists,is_late_delivery should exist,Required column check for is_late_delivery.
+2026-06-22 21:09:59,DWD,dwd_order_detail,required_column_check_dt,PASS,exists,dt should exist,Required column check for dt.
+2026-06-22 21:09:59,DWD,dwd_order_detail,primary_key_duplicate_check,PASS,0,duplicate order_id count = 0,Each row in dwd_order_detail should represent one unique order.
+2026-06-22 21:09:59,DWD,dwd_order_detail,primary_key_null_check,PASS,0,missing order_id count = 0,order_id should not be null.
+2026-06-22 21:09:59,DWD,dwd_order_detail,negative_amount_check_total_payment_amount,PASS,0,total_payment_amount should not be negative,Negative value check for total_payment_amount.
+2026-06-22 21:09:59,DWD,dwd_order_detail,negative_amount_check_total_product_amount,PASS,0,total_product_amount should not be negative,Negative value check for total_product_amount.
+2026-06-22 21:09:59,DWD,dwd_order_detail,negative_amount_check_total_freight_amount,PASS,0,total_freight_amount should not be negative,Negative value check for total_freight_amount.
+2026-06-22 21:09:59,DWD,dwd_order_detail,purchase_date_null_check,PASS,0,purchase_date should not be null,purchase_date is required for daily aggregation.
+2026-06-22 21:09:59,DWD,dwd_order_detail,binary_flag_check_is_delivered,PASS,[],is_delivered should only contain 0 or 1,Binary flag check for is_delivered.
+2026-06-22 21:09:59,DWD,dwd_order_detail,binary_flag_check_is_late_delivery,PASS,[],is_late_delivery should only contain 0 or 1,Binary flag check for is_late_delivery.
+2026-06-22 21:09:59,DWS,dws_daily_order_summary,date_granularity_check,PASS,0,one row per purchase_date,DWS daily summary should have one row per purchase date.
+2026-06-22 21:09:59,DWS,dws_daily_order_summary,non_negative_metric_check_order_count,PASS,0,order_count should not be negative,Non-negative metric check for order_count.
+2026-06-22 21:09:59,DWS,dws_daily_order_summary,non_negative_metric_check_valid_order_count,PASS,0,valid_order_count should not be negative,Non-negative metric check for valid_order_count.
+2026-06-22 21:09:59,DWS,dws_daily_order_summary,non_negative_metric_check_paid_order_count,PASS,0,paid_order_count should not be negative,Non-negative metric check for paid_order_count.
+2026-06-22 21:09:59,DWS,dws_daily_order_summary,non_negative_metric_check_unique_customer_count,PASS,0,unique_customer_count should not be negative,Non-negative metric check for unique_customer_count.
+2026-06-22 21:09:59,DWS,dws_daily_order_summary,non_negative_metric_check_delivered_order_count,PASS,0,delivered_order_count should not be negative,Non-negative metric check for delivered_order_count.
+2026-06-22 21:09:59,DWS,dws_daily_order_summary,non_negative_metric_check_late_delivery_order_count,PASS,0,late_delivery_order_count should not be negative,Non-negative metric check for late_delivery_order_count.
+2026-06-22 21:09:59,DWS,dws_daily_order_summary,non_negative_metric_check_total_payment_amount,PASS,0,total_payment_amount should not be negative,Non-negative metric check for total_payment_amount.
+2026-06-22 21:09:59,DWS,dws_daily_order_summary,non_negative_metric_check_total_product_amount,PASS,0,total_product_amount should not be negative,Non-negative metric check for total_product_amount.
+2026-06-22 21:09:59,DWS,dws_daily_order_summary,non_negative_metric_check_total_freight_amount,PASS,0,total_freight_amount should not be negative,Non-negative metric check for total_freight_amount.
+2026-06-22 21:09:59,DWS,dws_daily_order_summary,non_negative_metric_check_aov,PASS,0,aov should not be negative,Non-negative metric check for aov.
+2026-06-22 21:09:59,DWS,dws_daily_order_summary,rate_range_check_delivery_rate,PASS,0,delivery_rate should be between 0 and 1,Rate range check for delivery_rate.
+2026-06-22 21:09:59,DWS,dws_daily_order_summary,rate_range_check_late_delivery_rate,PASS,0,late_delivery_rate should be between 0 and 1,Rate range check for late_delivery_rate.
+2026-06-22 21:09:59,DWS,dws_daily_order_summary,rate_range_check_review_rate,PASS,0,review_rate should be between 0 and 1,Rate range check for review_rate.
+2026-06-22 21:09:59,DWS,dws_daily_order_summary,rate_range_check_review_comment_rate,PASS,0,review_comment_rate should be between 0 and 1,Rate range check for review_comment_rate.
+2026-06-22 21:09:59,ADS,ads_daily_business_overview,date_granularity_check,PASS,0,one row per stat_date,ADS daily overview should have one row per statistic date.
+2026-06-22 21:09:59,ADS,ads_daily_business_overview,non_negative_metric_check_daily_order_count,PASS,0,daily_order_count should not be negative,Non-negative metric check for daily_order_count.
+2026-06-22 21:09:59,ADS,ads_daily_business_overview,non_negative_metric_check_daily_valid_order_count,PASS,0,daily_valid_order_count should not be negative,Non-negative metric check for daily_valid_order_count.
+2026-06-22 21:09:59,ADS,ads_daily_business_overview,non_negative_metric_check_daily_paid_order_count,PASS,0,daily_paid_order_count should not be negative,Non-negative metric check for daily_paid_order_count.
+2026-06-22 21:09:59,ADS,ads_daily_business_overview,non_negative_metric_check_daily_unique_customer_count,PASS,0,daily_unique_customer_count should not be negative,Non-negative metric check for daily_unique_customer_count.
+2026-06-22 21:09:59,ADS,ads_daily_business_overview,non_negative_metric_check_daily_gmv,PASS,0,daily_gmv should not be negative,Non-negative metric check for daily_gmv.
+2026-06-22 21:09:59,ADS,ads_daily_business_overview,non_negative_metric_check_daily_product_amount,PASS,0,daily_product_amount should not be negative,Non-negative metric check for daily_product_amount.
+2026-06-22 21:09:59,ADS,ads_daily_business_overview,non_negative_metric_check_daily_freight_amount,PASS,0,daily_freight_amount should not be negative,Non-negative metric check for daily_freight_amount.
+2026-06-22 21:09:59,ADS,ads_daily_business_overview,non_negative_metric_check_daily_aov,PASS,0,daily_aov should not be negative,Non-negative metric check for daily_aov.
+2026-06-22 21:09:59,ADS,ads_daily_business_overview,non_negative_metric_check_cumulative_gmv,PASS,0,cumulative_gmv should not be negative,Non-negative metric check for cumulative_gmv.
+2026-06-22 21:09:59,ADS,ads_daily_business_overview,non_negative_metric_check_cumulative_order_count,PASS,0,cumulative_order_count should not be negative,Non-negative metric check for cumulative_order_count.
+2026-06-22 21:09:59,ADS,ads_daily_business_overview,non_negative_metric_check_cumulative_customer_count,PASS,0,cumulative_customer_count should not be negative,Non-negative metric check for cumulative_customer_count.
+2026-06-22 21:09:59,ADS,ads_daily_business_overview,rate_range_check_daily_delivery_rate,PASS,0,daily_delivery_rate should be between 0 and 1,Rate range check for daily_delivery_rate.
+2026-06-22 21:09:59,ADS,ads_daily_business_overview,rate_range_check_daily_late_delivery_rate,PASS,0,daily_late_delivery_rate should be between 0 and 1,Rate range check for daily_late_delivery_rate.
+2026-06-22 21:09:59,ADS,ads_daily_business_overview,rate_range_check_daily_review_rate,PASS,0,daily_review_rate should be between 0 and 1,Rate range check for daily_review_rate.
+2026-06-22 21:09:59,ADS,ads_daily_business_overview,rate_range_check_daily_review_comment_rate,PASS,0,daily_review_comment_rate should be between 0 and 1,Rate range check for daily_review_comment_rate.
+2026-06-22 21:09:59,ADS,ads_daily_business_overview,rate_range_check_valid_order_rate,PASS,0,valid_order_rate should be between 0 and 1,Rate range check for valid_order_rate.
+2026-06-22 21:09:59,ADS,ads_daily_business_overview,rate_range_check_paid_order_rate,PASS,0,paid_order_rate should be between 0 and 1,Rate range check for paid_order_rate.
+2026-06-22 21:10:00,CROSS_LAYER,DWD_vs_DWS,order_count_consistency_check,PASS,"DWD=99441, DWS=99441",DWD unique order count should equal DWS total order count,Check whether DWS aggregation preserves DWD order count.
+2026-06-22 21:10:00,CROSS_LAYER,DWS_vs_ADS,gmv_consistency_check,PASS,"DWS=16008872.12, ADS=16008872.12",DWS total payment amount should equal ADS daily GMV sum,Check whether ADS preserves GMV from DWS.
+2026-06-22 21:10:00,CROSS_LAYER,DWS_vs_ADS,order_count_consistency_check,PASS,"DWS=99441, ADS=99441",DWS total order count should equal ADS daily order count sum,Check whether ADS preserves order count from DWS.

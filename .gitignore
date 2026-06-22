@@ -1,0 +1,57 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+
+# =========================
+# Environment
+# =========================
+.env
+.env.local
+
+# =========================
+# Data files
+# Raw and intermediate warehouse data should not be committed
+# =========================
+data/raw/*
+data/ods/*
+data/dwd/*
+data/dws/*
+data/ads/*
+
+# Keep folder structure
+!data/raw/.gitkeep
+!data/ods/.gitkeep
+!data/dwd/.gitkeep
+!data/dws/.gitkeep
+!data/ads/.gitkeep
+
+# =========================
+# Logs
+# =========================
+*.log
+docs/pipeline_latest_run.log
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# IDE
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# System
+# =========================
+.DS_Store
+Thumbs.db
