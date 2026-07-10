@@ -840,9 +840,9 @@ KPI 汇总文件：
 
     dashboard/dashboard_kpi_summary.csv
 
-This module makes the final ADS output visible and easier to present in GitHub, resume projects, and interviews.
+This module makes the final ADS output visible and easy to present directly on GitHub.
 
-该模块使最终 ADS 层产出可视化，更适合用于 GitHub 展示、简历项目和面试讲解。
+该模块使最终 ADS 层产出可视化，便于在 GitHub 上直接展示。
 
 ## 15B. Business Analysis Layer / 业务分析层
 
@@ -1011,9 +1011,9 @@ The project documentation is written in both English and Chinese.
 
 项目文档采用中英文对照形式编写。
 
-This makes the project easier to explain in both Chinese and English interviews.
+This makes the project accessible to both English- and Chinese-speaking readers.
 
-这使项目更适合在中文和英文面试场景中讲解。
+这使项目对中英文读者都易于阅读和理解。
 
 ---
 
@@ -1065,118 +1065,47 @@ Completed:
 * Bilingual documentation.
   中英文对照文档。
 
----
+* **Business-analysis layer: RFM, product-category Pareto, geographic analysis.**
+  **业务分析层：RFM、商品类目帕累托、地域分析。**
 
-## 18. Future Improvements / 后续优化方向
+* **PostgreSQL + dbt modeling (staging → dwd → dws → ads) with schema tests.**
+  **PostgreSQL + dbt 建模（staging → dwd → dws → ads）与 schema 测试。**
 
-Planned improvements:
+* **Analysis layer also implemented in Spark SQL and dbt with comparison.**
+  **分析层同样在 Spark SQL 与 dbt 上实现并做一致性对比。**
 
-计划优化方向：
+* **pytest unit tests + GitHub Actions CI (ruff + pytest).**
+  **pytest 单元测试 + GitHub Actions CI（ruff + pytest）。**
 
-| Direction / 方向                  | Description / 说明                                                                            | Status / 状态 |
-| ------------------------------- | ------------------------------------------------------------------------------------------- | --- |
-| More DWD tables / 更多 DWD 表      | Build product, seller, customer, and logistics detail tables / 构建商品、卖家、客户和物流明细表             | Planned / 计划 |
-| More DWS summaries / 更多 DWS 汇总表 | Build customer, product, city, payment, and delivery summary tables / 构建客户、商品、城市、支付和物流主题汇总表 | Planned / 计划 |
-| BI dashboard / BI 看板            | Build Power BI or Superset dashboard / 构建 Power BI 或 Superset 看板                            | Planned / 计划 |
-| **Spark migration / Spark 迁移**  | **Replace Pandas processing with PySpark for DWD/DWS/ADS / 使用 PySpark 重构 DWD/DWS/ADS 处理逻辑** | **Completed / 已完成** |
-| Spark ODS loading / Spark ODS 加载 | Replace Pandas ODS loading with Spark / 使用 Spark 替换 Pandas ODS 加载                              | Planned / 计划 |
-| Airflow scheduling / Airflow 调度 | Schedule ETL pipeline with Airflow DAGs / 使用 Airflow DAG 调度 ETL 流程                          | Planned / 计划 |
-| Database storage / 数据库存储        | Load final tables into PostgreSQL or ClickHouse / 将最终表加载到 PostgreSQL 或 ClickHouse           | Planned / 计划 |
-| Data visualization / 数据可视化      | Add dashboard screenshots and analysis results / 增加看板截图和分析结论                                | Planned / 计划 |
-| Customer analysis / 用户分析        | Add RFM customer segmentation / 增加 RFM 用户分层                                                 | Planned / 计划 |
-| Product analysis / 商品分析         | Add product category ranking and sales contribution analysis / 增加商品类目排名和销售贡献分析              | Planned / 计划 |
+* **Interactive self-contained HTML dashboard.**
+  **交互式自包含 HTML 看板。**
+
+* **Airflow and Superset environments (docker-compose).**
+  **Airflow 与 Superset 环境（docker-compose）。**
 
 ---
 
-## 19. Resume Description / 简历描述
+## 18. Roadmap / 后续规划
 
-### 19.1 Pandas Baseline Version / Pandas 基准版本
+The layered warehouse, multi-engine implementation (Pandas / Spark SQL / dbt),
+data quality, business-analysis layer, tests, CI, and BI dashboards are already
+in place. The items below are natural next extensions.
 
-Chinese version:
+分层数仓、多引擎实现（Pandas / Spark SQL / dbt）、数据质量、业务分析层、测试、CI 与
+BI 看板均已完成。以下为自然的后续扩展方向。
 
-中文简历描述：
-
-基于 Olist 电商订单数据构建离线数仓项目，设计 Raw-ODS-DWD-DWS-ADS 分层架构，使用 Python 和 Pandas 实现原始数据探查、ODS 加载、DWD 订单明细宽表构建、DWS 每日经营汇总和 ADS 看板指标表生成；构建 GMV、订单量、客单价、物流延迟率、评价率等核心指标，并开发数据质量检查模块和一键 ETL 主流程脚本，实现文件完整性、主键重复、金额合法性、指标范围和跨层一致性校验。
-
-English version:
-
-英文简历描述：
-
-Built an offline e-commerce data warehouse based on the Olist order dataset, designing a Raw-ODS-DWD-DWS-ADS layered architecture. Implemented raw data profiling, ODS loading, DWD order detail modeling, DWS daily business aggregation, and ADS dashboard-ready metric tables using Python and Pandas. Developed key metrics including GMV, order count, AOV, delivery delay rate, and review rate, and implemented automated data quality checks and a one-command ETL pipeline for file completeness, primary key uniqueness, amount validation, metric range checks, and cross-layer consistency validation.
-
-### 19.1b Analysis & Engineering Add-on / 分析与工程增强补充
-
-Chinese version / 中文简历描述：
-
-在数仓基础上补充业务分析层：基于 DWD 实现 RFM 用户分层（rank 分位打分，对复购稀疏
-的电商数据做稳健处理）、商品类目帕累托贡献分析与地域（州级）经营/物流分析，产出 ADS
-表、可视化图表与业务洞察报告；并为分析层编写 pytest 单元测试与 GitHub Actions CI
-（ruff + pytest），提升项目工程化与可维护性。
-
-English version / 英文简历描述：
-
-Extended the warehouse with a business-analysis layer: RFM customer segmentation
-(rank-based quintile scoring, robust to the sparse-repeat nature of e-commerce
-data), product-category Pareto contribution analysis, and geographic (state-level)
-performance/logistics analysis — producing ADS tables, charts, and an insights
-report. Added pytest unit tests and a GitHub Actions CI pipeline (ruff + pytest)
-for the analysis layer to improve engineering quality and maintainability.
-
-### 19.2 Spark SQL Enhanced Version / Spark SQL 增强版本
-
-Chinese version:
-
-中文简历描述：
-
-在电商离线数仓项目中实现 Spark SQL 迁移，基于 PySpark 重构 DWD 订单明细层、DWS 每日经营汇总层和 ADS 看板指标层，使用 Spark SQL 完成多表关联、聚合计算、窗口函数指标（7 日移动平均、累计指标、日环比）和自动化 Pandas 与 Spark 输出对比校验，23 项核心指标全部一致。保留 Pandas 基准主流程，展示了从本地原型到大数据风格处理的迁移思维。
-
-English version:
-
-英文简历描述：
-
-Implemented a Spark SQL migration for an e-commerce offline data warehouse, rebuilding DWD, DWS, and ADS layers with PySpark and Spark SQL. Developed multi-table joins, aggregations, window-function-based metrics (7-day moving averages, cumulative metrics, day-over-day changes), and automated Pandas-vs-Spark validation reports with all 23 core comparison checks passed. Kept Pandas baseline pipeline separate, demonstrating migration thinking from local prototype to big-data-style processing.
+| Direction / 方向 | Description / 说明 | Value / 价值 |
+|---|---|---|
+| Incremental loading / 增量加工 | Load by `dt` partition instead of full reload / 按 `dt` 分区增量加工，替代全量重跑 | High / 高 — 最贴近生产实践 |
+| More subject tables / 更多主题表 | Add customer / product / seller / logistics DWD & DWS models / 补客户、商品、卖家、物流主题的 DWD 与 DWS 模型 | High / 高 — 体现维度建模广度 |
+| Retention & LTV / 留存与 LTV | Cohort retention and lifetime-value analysis on top of RFM / 在 RFM 之上做 cohort 留存与 LTV 分析 | Medium / 中 |
+| Source freshness tests / 数据新鲜度测试 | dbt source freshness + volume anomaly checks / dbt 源新鲜度与数据量异常检测 | Medium / 中 |
+| ClickHouse OLAP / ClickHouse 加速 | Serve ADS tables from ClickHouse for fast dashboards / 用 ClickHouse 承载 ADS 表加速看板 | Low / 低 — nice-to-have |
+| Spark ODS loading / Spark ODS 加载 | Replace the Pandas ODS load with Spark for a full Spark chain / 用 Spark 替换 Pandas ODS 加载 | Low / 低 — 主要为完整性 |
 
 ---
 
-## 20. Interview Talking Points / 面试讲解要点
-
-When explaining this project in an interview, the key points are:
-
-面试中讲解该项目时，可以重点说明：
-
-1. I designed a complete offline warehouse architecture from Raw to ADS.
-   我设计了从 Raw 到 ADS 的完整离线数仓架构。
-
-2. I separated detail data, summary data, and dashboard-ready data into different layers.
-   我将明细数据、汇总数据和看板应用数据拆分到不同分层中。
-
-3. I built a core DWD order detail wide table as the foundation for later metrics.
-   我构建了核心 DWD 订单明细宽表，作为后续指标计算基础。
-
-4. I created reusable DWS and ADS tables for business analysis and BI dashboards.
-   我构建了可复用的 DWS 和 ADS 表，用于业务分析和 BI 看板。
-
-5. I added data quality checks to ensure file completeness, primary key uniqueness, metric validity, and cross-layer consistency.
-   我加入了数据质量检查，保证文件完整性、主键唯一性、指标有效性和跨层一致性。
-
-6. I automated the whole workflow with one-command pipeline scripts for both Pandas and Spark.
-   我使用一键主流程脚本自动化完整 ETL 链路（Pandas 和 Spark 两套）。
-
-7. I implemented Spark SQL migration for DWD, DWS, and ADS layers using PySpark.
-   我实现了 DWD、DWS、ADS 分层的 Spark SQL 迁移，使用 PySpark。
-
-8. I used Spark SQL window functions for moving averages, cumulative metrics, and day-over-day changes.
-   我使用 Spark SQL 窗口函数计算移动平均、累计指标和日环比变化。
-
-9. I built automated Pandas vs Spark comparison to validate migration correctness (23 checks all passed).
-   我构建了自动化 Pandas 与 Spark 对比校验（23 项检查全部通过）。
-
-10. The project first used Pandas as a local baseline, then added Spark SQL migration. ODS is reused. DWD/DWS/ADS are rebuilt with Spark SQL. Results are validated against Pandas output. This reflects how data teams migrate prototypes to scalable processing.
-    项目先使用 Pandas 作为本地基准，再添加 Spark SQL 迁移。ODS 复用。DWD/DWS/ADS 用 Spark SQL 重构。结果与 Pandas 输出校验。这反映了数据团队如何将原型迁移到可扩展处理方案。
-
----
-
-## 21. Notes / 说明
+## 19. Notes / 说明
 
 The raw data files are not included in this repository because they may be large.
 
@@ -1194,6 +1123,6 @@ Generated intermediate data files under `data/ods/`, `data/dwd/`, `data/dws/`, a
 
 默认情况下，`data/ods/`、`data/dwd/`、`data/dws/` 和 `data/ads/` 下生成的中间数据文件也不会上传到 Git。
 
-This project is designed for learning, portfolio demonstration, and interview preparation.
+This project is designed for learning and portfolio demonstration.
 
-本项目主要用于学习、作品集展示和面试准备。
+本项目主要用于学习与作品集展示。
