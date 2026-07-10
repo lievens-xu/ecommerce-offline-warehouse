@@ -1,0 +1,5 @@
+﻿step_order,step_name,script,status,return_code,start_time,end_time,duration_seconds,description,error_message
+1,Spark DWD Order Detail Building,spark_build_dwd_order_detail.py,SUCCESS,0,2026-06-24 12:41:22,2026-06-24 12:42:09,47.51,Build DWD order detail table using Spark SQL from ODS layer.,
+2,Spark DWS Daily Order Summary Building,spark_build_dws_daily_order_summary.py,SUCCESS,0,2026-06-24 12:42:09,2026-06-24 12:42:30,20.68,Build DWS daily order summary table using Spark SQL from Spark DWD.,
+3,Spark ADS Daily Business Overview Building,spark_build_ads_daily_business_overview.py,SUCCESS,0,2026-06-24 12:42:30,2026-06-24 12:42:46,16.16,Build ADS daily business overview table using Spark SQL from Spark DWS.,
+4,Pandas vs Spark Full Comparison,compare_pandas_spark_outputs.py,SUCCESS,0,2026-06-24 12:42:46,2026-06-24 12:42:48,2.42,Compare all Pandas baseline outputs with Spark SQL migration outputs.,

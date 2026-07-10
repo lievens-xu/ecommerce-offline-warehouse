@@ -1,0 +1,50 @@
+﻿check_type,schema,table,column,expected,actual,status,message
+schema_exists,ods,,,exists,exists,PASS,Schema ods check
+schema_exists,dwd,,,exists,exists,PASS,Schema dwd check
+schema_exists,dws,,,exists,exists,PASS,Schema dws check
+schema_exists,ads,,,exists,exists,PASS,Schema ads check
+table_exists,ods,customers,,exists,exists,PASS,Table ods.customers exists
+row_count_positive,ods,customers,,> 0,99441,PASS,Table ods.customers has 99441 rows
+column_exists,ods,customers,loaded_at,exists,exists,PASS,Column loaded_at in ods.customers
+column_exists,ods,customers,dt,exists,exists,PASS,Column dt in ods.customers
+table_exists,ods,orders,,exists,exists,PASS,Table ods.orders exists
+row_count_positive,ods,orders,,> 0,99441,PASS,Table ods.orders has 99441 rows
+column_exists,ods,orders,loaded_at,exists,exists,PASS,Column loaded_at in ods.orders
+column_exists,ods,orders,dt,exists,exists,PASS,Column dt in ods.orders
+table_exists,ods,order_items,,exists,exists,PASS,Table ods.order_items exists
+row_count_positive,ods,order_items,,> 0,112650,PASS,Table ods.order_items has 112650 rows
+column_exists,ods,order_items,loaded_at,exists,exists,PASS,Column loaded_at in ods.order_items
+column_exists,ods,order_items,dt,exists,exists,PASS,Column dt in ods.order_items
+table_exists,ods,order_payments,,exists,exists,PASS,Table ods.order_payments exists
+row_count_positive,ods,order_payments,,> 0,103886,PASS,Table ods.order_payments has 103886 rows
+column_exists,ods,order_payments,loaded_at,exists,exists,PASS,Column loaded_at in ods.order_payments
+column_exists,ods,order_payments,dt,exists,exists,PASS,Column dt in ods.order_payments
+table_exists,ods,order_reviews,,exists,exists,PASS,Table ods.order_reviews exists
+row_count_positive,ods,order_reviews,,> 0,99224,PASS,Table ods.order_reviews has 99224 rows
+column_exists,ods,order_reviews,loaded_at,exists,exists,PASS,Column loaded_at in ods.order_reviews
+column_exists,ods,order_reviews,dt,exists,exists,PASS,Column dt in ods.order_reviews
+table_exists,ods,products,,exists,exists,PASS,Table ods.products exists
+row_count_positive,ods,products,,> 0,32951,PASS,Table ods.products has 32951 rows
+column_exists,ods,products,loaded_at,exists,exists,PASS,Column loaded_at in ods.products
+column_exists,ods,products,dt,exists,exists,PASS,Column dt in ods.products
+table_exists,ods,sellers,,exists,exists,PASS,Table ods.sellers exists
+row_count_positive,ods,sellers,,> 0,3095,PASS,Table ods.sellers has 3095 rows
+column_exists,ods,sellers,loaded_at,exists,exists,PASS,Column loaded_at in ods.sellers
+column_exists,ods,sellers,dt,exists,exists,PASS,Column dt in ods.sellers
+table_exists,ods,geolocation,,exists,exists,PASS,Table ods.geolocation exists
+row_count_positive,ods,geolocation,,> 0,1000163,PASS,Table ods.geolocation has 1000163 rows
+column_exists,ods,geolocation,loaded_at,exists,exists,PASS,Column loaded_at in ods.geolocation
+column_exists,ods,geolocation,dt,exists,exists,PASS,Column dt in ods.geolocation
+table_exists,ods,product_category_translation,,exists,exists,PASS,Table ods.product_category_translation exists
+row_count_positive,ods,product_category_translation,,> 0,71,PASS,Table ods.product_category_translation has 71 rows
+column_exists,ods,product_category_translation,loaded_at,exists,exists,PASS,Column loaded_at in ods.product_category_translation
+column_exists,ods,product_category_translation,dt,exists,exists,PASS,Column dt in ods.product_category_translation
+raw_row_count_match,ods,customers,,99441,99441,PASS,"Raw CSV rows: 99441, Loaded rows: 99441 (match)"
+raw_row_count_match,ods,orders,,99441,99441,PASS,"Raw CSV rows: 99441, Loaded rows: 99441 (match)"
+raw_row_count_match,ods,order_items,,112650,112650,PASS,"Raw CSV rows: 112650, Loaded rows: 112650 (match)"
+raw_row_count_match,ods,order_payments,,103886,103886,PASS,"Raw CSV rows: 103886, Loaded rows: 103886 (match)"
+raw_row_count_match,ods,order_reviews,,99224,99224,PASS,"Raw CSV rows: 99224, Loaded rows: 99224 (match)"
+raw_row_count_match,ods,products,,32951,32951,PASS,"Raw CSV rows: 32951, Loaded rows: 32951 (match)"
+raw_row_count_match,ods,sellers,,3095,3095,PASS,"Raw CSV rows: 3095, Loaded rows: 3095 (match)"
+raw_row_count_match,ods,geolocation,,1000163,1000163,PASS,"Raw CSV rows: 1000163, Loaded rows: 1000163 (match)"
+raw_row_count_match,ods,product_category_translation,,71,71,PASS,"Raw CSV rows: 71, Loaded rows: 71 (match)"

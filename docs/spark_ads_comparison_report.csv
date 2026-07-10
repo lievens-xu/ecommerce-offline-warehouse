@@ -1,0 +1,8 @@
+﻿metric_name,pandas_value,spark_sql_value,difference,tolerance,status,message
+row_count,634.0,634.0,0.0,0.0,PASS,Values match within tolerance.
+total_order_count,99441.0,99441.0,0.0,0.0,PASS,Values match within tolerance.
+total_gmv,16008872.12,16008872.12,0.0,0.01,PASS,Values match within tolerance.
+average_daily_gmv,25250.5869,25250.5869,0.0,0.05,PASS,Values match within tolerance.
+overall_aov,160.9886,160.9886,0.0,0.05,PASS,Values match within tolerance.
+latest_daily_gmv,89.71,89.71,0.0,0.01,PASS,Values match within tolerance.
+latest_daily_order_count,1.0,1.0,0.0,0.0,PASS,Values match within tolerance.

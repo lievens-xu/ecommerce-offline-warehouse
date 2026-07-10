@@ -1,0 +1,98 @@
+# Airflow Docker Compose for E-Commerce Warehouse Pipeline
+# Airflow Docker Compose 电商数仓主流程
+#
+# This compose file defines Airflow services for orchestrating the
+# PostgreSQL + dbt warehouse pipeline.
+# 本 compose 文件定义用于编排 PostgreSQL + dbt 数仓主流程的 Airflow 服务。
+#
+# PostgreSQL is expected to be running separately via:
+# PostgreSQL 应已通过以下命令独立运行：
+#   docker compose -f docker-compose.postgres.yml up -d
+#
+
+x-airflow-common:
+  &airflow-common
+  build:
+    context: ./airflow
+    dockerfile: Dockerfile
+  image: ecommerce_warehouse_airflow:latest
+  env_file:
+    - ./airflow/.env
+  volumes:
+    # Mount the entire project as /opt/airflow/project/ for Python scripts and dbt
+    # 挂载整个项目到 /opt/airflow/project/，用于 Python 脚本和 dbt
+    - .:/opt/airflow/project
+    # Mount Airflow dbt profile configuration
+    # 挂载 Airflow dbt 配置
+    - ./airflow/config:/opt/airflow/config
+    # Mount Airflow logs
+    # 挂载 Airflow 日志
+    - ./airflow/logs:/opt/airflow/logs
+    # Mount Airflow DAGs
+    # 挂载 Airflow DAG
+    - ./airflow/dags:/opt/airflow/dags
+  environment:
+    &airflow-common-env
+    # Airflow configuration / Airflow 配置
+    AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'False'
+    AIRFLOW__CORE__DAGS_FOLDER: /opt/airflow/dags
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: sqlite:////opt/airflow/project/airflow/airflow.db
+    AIRFLOW__WEBSERVER__EXPOSE_CONFIG: 'True'
+    AIRFLOW__WEBSERVER__ENABLE_PROXY_FIX: 'True'
+    # Timezone / 时区
+    AIRFLOW__CORE__DEFAULT_TIMEZONE: Asia/Shanghai
+  user: "${AIRFLOW_UID:-50000}:0"
+  networks:
+    - ecommerce_warehouse_network
+
+services:
+
+  airflow-init:
+    <<: *airflow-common
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        airflow db init &&
+        airflow users create \
+          --username "$${_AIRFLOW_WWW_USER_USERNAME}" \
+          --password "$${_AIRFLOW_WWW_USER_PASSWORD}" \
+          --firstname Admin \
+          --lastname User \
+          --role Admin \
+          --email "$${_AIRFLOW_WWW_USER_EMAIL}"
+    restart: "no"
+
+  airflow-webserver:
+    <<: *airflow-common
+    command: airflow webserver
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-scheduler:
+    <<: *airflow-common
+    command: airflow scheduler
+    healthcheck:
+      test: ["CMD", "airflow", "jobs", "check", "--job-type", "SchedulerJob"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+
+networks:
+  ecommerce_warehouse_network:
+    name: ecommerce_warehouse_network
+    driver: bridge

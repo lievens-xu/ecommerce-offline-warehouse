@@ -1,0 +1,15 @@
+# Airflow E-Commerce Warehouse Pipeline
+# Airflow 电商数仓主流程
+#
+# Python packages required inside the Airflow container.
+# Airflow 容器内所需的 Python 包。
+
+# dbt for warehouse transformations / dbt 数仓转换
+dbt-core>=1.5.0
+dbt-postgres>=1.5.0
+
+# Data processing / 数据处理
+pandas
+numpy
+sqlalchemy
+psycopg2-binary

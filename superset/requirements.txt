@@ -1,0 +1,8 @@
+# Superset E-Commerce Warehouse Dashboard
+# Superset 电商数仓看板
+#
+# Python packages required for the Superset container.
+# Superset 容器所需的 Python 包。
+
+# psycopg2 for PostgreSQL connection / psycopg2 用于 PostgreSQL 连接
+psycopg2-binary

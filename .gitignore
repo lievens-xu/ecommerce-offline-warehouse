@@ -34,6 +34,11 @@ data/ads/*
 !data/ads/.gitkeep
 
 # =========================
+# Personal notes (do not upload) / 个人学习笔记（不上传）
+# =========================
+LEARNING_NOTES.md
+
+# =========================
 # Logs
 # =========================
 *.log
@@ -55,3 +60,42 @@ docs/pipeline_latest_run.log
 # =========================
 .DS_Store
 Thumbs.db
+
+# =========================
+# Docker / Docker 相关
+# =========================
+# Docker volumes are managed by Docker, not Git
+# Docker 卷由 Docker 管理，不应提交到 Git
+postgres_data/
+
+# =========================
+# dbt
+# =========================
+# Local dbt profile with database credentials / 包含数据库凭据的本地 dbt 配置
+dbt/ecommerce_warehouse/profiles.yml
+# dbt target directory / dbt 目标目录
+dbt/ecommerce_warehouse/target/
+# dbt logs / dbt 日志
+dbt/ecommerce_warehouse/logs/
+
+# =========================
+# Airflow / Airflow 相关
+# =========================
+# Airflow local runtime artifacts / Airflow 本地运行时产物
+airflow/.env
+airflow/config/profiles.yml
+airflow/logs/*
+airflow/airflow.db
+airflow/airflow.cfg
+airflow/airflow.cfg
+airflow/webserver_config.py
+# Keep airflow/logs directory structure
+!airflow/logs/.gitkeep
+
+# =========================
+# Superset / Superset 相关
+# =========================
+# Superset local environment file / Superset 本地环境文件
+superset/.env
+# Superset runtime artifacts / Superset 运行时产物
+superset/superset.db*

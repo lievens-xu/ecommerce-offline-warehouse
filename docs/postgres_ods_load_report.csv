@@ -1,0 +1,10 @@
+﻿csv_file,schema,table,full_table_name,raw_row_count,raw_column_count,loaded_row_count,row_count_match,status,loaded_at
+olist_customers_dataset.csv,ods,customers,ods.customers,99441,5,99441,True,PASS,2026-06-24 09:31:50
+olist_orders_dataset.csv,ods,orders,ods.orders,99441,8,99441,True,PASS,2026-06-24 09:31:56
+olist_order_items_dataset.csv,ods,order_items,ods.order_items,112650,7,112650,True,PASS,2026-06-24 09:32:03
+olist_order_payments_dataset.csv,ods,order_payments,ods.order_payments,103886,5,103886,True,PASS,2026-06-24 09:32:11
+olist_order_reviews_dataset.csv,ods,order_reviews,ods.order_reviews,99224,7,99224,True,PASS,2026-06-24 09:32:17
+olist_products_dataset.csv,ods,products,ods.products,32951,9,32951,True,PASS,2026-06-24 09:32:23
+olist_sellers_dataset.csv,ods,sellers,ods.sellers,3095,4,3095,True,PASS,2026-06-24 09:32:25
+olist_geolocation_dataset.csv,ods,geolocation,ods.geolocation,1000163,5,1000163,True,PASS,2026-06-24 09:32:27
+product_category_name_translation.csv,ods,product_category_translation,ods.product_category_translation,71,2,71,True,PASS,2026-06-24 09:33:21

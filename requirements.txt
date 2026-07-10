@@ -6,3 +6,6 @@ python-dotenv
 jupyter
 tabulate
 matplotlib
+pyspark
+dbt-core
+dbt-postgres

@@ -1,0 +1,10 @@
+﻿metric_name,pandas_value,spark_sql_value,difference,tolerance,status,message
+row_count,99441.0,99441.0,0.0,0.0,PASS,Values match within tolerance.
+unique_order_count,99441.0,99441.0,0.0,0.0,PASS,Values match within tolerance.
+unique_customer_count,96096.0,96096.0,0.0,0.0,PASS,Values match within tolerance.
+total_payment_amount,16008872.12,16008872.12,0.0,0.01,PASS,Values match within tolerance.
+total_product_amount,13591643.7,13591643.7,0.0,0.01,PASS,Values match within tolerance.
+total_freight_amount,2251909.54,2251909.54,0.0,0.01,PASS,Values match within tolerance.
+delivered_order_count,96476.0,96476.0,0.0,0.0,PASS,Values match within tolerance.
+late_delivery_order_count,6535.0,6535.0,0.0,0.0,PASS,Values match within tolerance.
+average_review_score,4.09,4.06,0.03,0.05,PASS,Values match within tolerance.

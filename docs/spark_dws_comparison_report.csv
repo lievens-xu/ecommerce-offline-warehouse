@@ -1,0 +1,5 @@
+﻿metric_name,pandas_value,spark_sql_value,difference,status
+row_count,634.0,634.0,0.0,PASS
+total_order_count,99441.0,99441.0,0.0,PASS
+total_payment_amount,16008872.12,16008872.12,0.0,PASS
+total_product_amount,13591643.7,13591643.7,0.0,PASS

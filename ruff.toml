@@ -1,0 +1,20 @@
+# Ruff 配置 / Ruff linter configuration
+# 面向数据工程脚本的务实规则集 / A pragmatic rule set for data-engineering scripts.
+
+line-length = 100
+target-version = "py310"
+
+[lint]
+select = ["E", "F", "W", "I"]  # pycodestyle, pyflakes, warnings, isort
+ignore = [
+    "E402",  # 模块级 import 不在顶部：脚本中 matplotlib.use() 后再 import pyplot
+    "E501",  # 行过长：文档字符串含中英文对照，容忍长行
+]
+
+[lint.per-file-ignores]
+# 测试中本地脚本模块无法被 isort 识别为一方包，放宽导入排序检查
+# Local script modules aren't recognized as first-party by isort in tests.
+"tests/*" = ["I001"]
+
+[lint.isort]
+known-first-party = ["scripts"]

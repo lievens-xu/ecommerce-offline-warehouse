@@ -1,0 +1,230 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "Staging model for ODS customers / ODS 客户表 Staging 模型"
+    columns:
+      - name: customer_id
+        description: "Primary key / 主键"
+        tests:
+          - not_null
+          - unique
+      - name: customer_unique_id
+        description: "Unique customer identifier / 客户唯一标识"
+        tests:
+          - not_null
+      - name: customer_city
+        description: "Customer city / 客户城市"
+      - name: customer_state
+        description: "Customer state / 客户州"
+
+  - name: stg_orders
+    description: "Staging model for ODS orders / ODS 订单表 Staging 模型"
+    columns:
+      - name: order_id
+        description: "Primary key / 主键"
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "Foreign key to customers / 客户表外键"
+        tests:
+          - not_null
+      - name: order_status
+        description: "Order status / 订单状态"
+        tests:
+          - accepted_values:
+              values:
+                - "approved"
+                - "canceled"
+                - "created"
+                - "delivered"
+                - "invoiced"
+                - "processing"
+                - "shipped"
+                - "unavailable"
+
+  - name: stg_order_items
+    description: "Staging model for ODS order items / ODS 订单商品表 Staging 模型"
+    columns:
+      - name: order_id
+        description: "Foreign key to orders / 订单表外键"
+        tests:
+          - not_null
+      - name: product_id
+        description: "Foreign key to products / 商品表外键"
+      - name: seller_id
+        description: "Foreign key to sellers / 卖家表外键"
+
+  - name: stg_order_payments
+    description: "Staging model for ODS order payments / ODS 订单支付表 Staging 模型"
+    columns:
+      - name: order_id
+        description: "Foreign key to orders / 订单表外键"
+        tests:
+          - not_null
+      - name: payment_type
+        description: "Payment method / 支付方式"
+        tests:
+          - accepted_values:
+              values:
+                - "credit_card"
+                - "debit_card"
+                - "boleto"
+                - "voucher"
+                - "not_defined"
+
+  - name: stg_order_reviews
+    description: >
+      Staging model for ODS order reviews.
+      Note: review_id is NOT unique in the raw Olist data.
+      ODS 订单评价表 Staging 模型。
+      注意：review_id 在原始 Olist 数据中不唯一。
+    columns:
+      - name: review_id
+        description: "Review ID (may have duplicates) / 评价 ID（可能重复）"
+        tests:
+          - not_null
+          # NOT unique - raw Olist data has duplicate review_ids
+          # 不设置 unique - Olist 原始数据存在重复 review_id
+      - name: order_id
+        description: "Foreign key to orders / 订单表外键"
+        tests:
+          - not_null
+      - name: review_score
+        description: "Review score (1-5) / 评价分数（1-5）"
+        tests:
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
+
+  - name: stg_products
+    description: "Staging model for ODS products / ODS 商品表 Staging 模型"
+    columns:
+      - name: product_id
+        description: "Primary key / 主键"
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_sellers
+    description: "Staging model for ODS sellers / ODS 卖家表 Staging 模型"
+    columns:
+      - name: seller_id
+        description: "Primary key / 主键"
+        tests:
+          - not_null
+          - unique
+
+  - name: dwd_order_detail
+    description: "DWD order-level detail table / DWD 订单级别明细表"
+    columns:
+      - name: order_id
+        description: "Primary key (unique order) / 主键（唯一订单）"
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "Customer ID / 客户 ID"
+        tests:
+          - not_null
+      - name: customer_unique_id
+        description: "Unique customer identifier / 客户唯一标识"
+      - name: order_status
+        description: "Order status / 订单状态"
+      - name: purchase_date
+        description: "Purchase date / 购买日期"
+        tests:
+          - not_null
+      - name: total_payment_amount
+        description: "Total payment amount / 支付总金额"
+      - name: is_delivered
+        description: "Whether the order was delivered / 是否已配送"
+      - name: is_late_delivery
+        description: "Whether the delivery was late / 是否延迟配送"
+
+  - name: dws_daily_order_summary
+    description: "DWS daily order summary table / DWS 每日订单汇总表"
+    columns:
+      - name: purchase_date
+        description: "Purchase date / 购买日期"
+        tests:
+          - not_null
+          - unique
+      - name: order_count
+        description: "Total order count / 总订单数"
+        tests:
+          - not_null
+      - name: delivered_order_count
+        description: "Delivered order count / 已配送订单数"
+      - name: aov
+        description: "Average order value / 平均订单价值"
+      - name: total_payment_amount
+        description: "Total payment amount / 支付总金额"
+
+  - name: ads_daily_business_overview
+    description: "ADS daily business overview for dashboard / ADS 每日经营概览表（看板用）"
+    columns:
+      - name: stat_date
+        description: "Statistics date / 统计日期"
+        tests:
+          - not_null
+          - unique
+      - name: daily_order_count
+        description: "Daily order count / 每日订单数"
+      - name: daily_gmv
+        description: "Daily GMV (gross merchandise value) / 每日 GMV（商品交易总额）"
+      - name: daily_aov
+        description: "Daily average order value / 每日平均订单价值"
+      - name: cumulative_gmv
+        description: "Cumulative GMV / 累计 GMV"
+      - name: gmv_7d_moving_avg
+        description: "7-day moving average of GMV / GMV 7日移动平均"
+
+  - name: ads_customer_rfm
+    description: "ADS customer-level RFM segmentation / ADS 客户 RFM 分层表"
+    columns:
+      - name: customer_unique_id
+        description: "Unique customer identifier / 客户唯一标识"
+        tests:
+          - not_null
+          - unique
+      - name: recency
+        description: "Days since last purchase vs snapshot / 距上次购买天数"
+      - name: frequency
+        description: "Number of valid orders / 有效订单数"
+      - name: monetary
+        description: "Total valid payment amount / 有效支付总额"
+      - name: segment
+        description: "RFM business segment / RFM 业务分层"
+        tests:
+          - not_null
+
+  - name: ads_product_category_rank
+    description: "ADS product category revenue ranking (Pareto) / ADS 商品类目收入排名（帕累托）"
+    columns:
+      - name: category
+        description: "Product category (English) / 商品类目（英文）"
+        tests:
+          - not_null
+          - unique
+      - name: revenue_rank
+        description: "Rank by product revenue / 按商品收入排名"
+        tests:
+          - not_null
+      - name: product_revenue
+        description: "Total product revenue / 商品收入合计"
+
+  - name: ads_geo_state_summary
+    description: "ADS state-level business & delivery summary / ADS 州级经营与物流汇总"
+    columns:
+      - name: customer_state
+        description: "Customer state / 客户所在州"
+        tests:
+          - not_null
+          - unique
+      - name: gmv
+        description: "State GMV / 该州 GMV"
+      - name: gmv_rank
+        description: "Rank by GMV / 按 GMV 排名"
+        tests:
+          - not_null

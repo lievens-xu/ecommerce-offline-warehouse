@@ -1,0 +1,21 @@
+# E-Commerce Data Warehouse dbt Profile
+# 电商数仓 dbt 配置
+#
+# Copy this file to profiles.yml and adjust values as needed.
+# 将此文件复制为 profiles.yml 并根据需要调整配置。
+
+ecommerce_warehouse:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      port: 5433
+      database: ecommerce_warehouse
+      user: warehouse_user
+      password: warehouse_pass
+      schema: dbt_dev
+      threads: 4
+      keepalives_idle: 0
+      connect_timeout: 10
+      sslmode: prefer

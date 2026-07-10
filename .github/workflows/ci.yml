@@ -1,0 +1,47 @@
+name: CI
+
+# 在 push 与 PR 时运行 lint 与单元测试
+# Run lint and unit tests on push and pull request.
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11"]
+
+    steps:
+      - name: Checkout / 检出代码
+        uses: actions/checkout@v4
+
+      - name: Set up Python / 配置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies / 安装依赖
+        run: |
+          python -m pip install --upgrade pip
+          # CI 仅需分析层与测试所需的轻量依赖，无需 spark/dbt/postgres
+          # CI only needs the lightweight libs for the analysis layer + tests.
+          pip install pandas numpy matplotlib pytest pytest-cov ruff
+
+      - name: Lint with ruff / 使用 ruff 静态检查
+        # 仅检查新增的分析层与测试（基准脚本保持不动，避免对遗留风格误报）
+        # Lint only the new analysis layer + tests (baseline scripts left untouched).
+        run: |
+          ruff check \
+            scripts/build_ads_customer_rfm.py \
+            scripts/build_ads_product_category_rank.py \
+            scripts/build_ads_geo_state_summary.py \
+            scripts/run_analysis_pipeline.py \
+            tests
+
+      - name: Run unit tests / 运行单元测试
+        run: pytest --cov=scripts --cov-report=term-missing

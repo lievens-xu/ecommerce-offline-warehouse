@@ -1,0 +1,124 @@
+version: 2
+
+sources:
+  - name: ods
+    schema: ods
+    description: >
+      Operational Data Store — raw business data loaded from Olist CSV files.
+      原始数据层——从 Olist CSV 文件加载的原始业务数据。
+    tables:
+      - name: customers
+        description: "Customer profile data / 客户信息数据"
+        columns:
+          - name: customer_id
+            description: "Primary key / 主键"
+          - name: customer_unique_id
+            description: "Unique customer identifier / 客户唯一标识"
+          - name: customer_zip_code_prefix
+            description: "Zip code prefix / 邮编前缀"
+          - name: customer_city
+            description: "Customer city / 客户城市"
+          - name: customer_state
+            description: "Customer state (two-letter code) / 客户州（两字母代码）"
+
+      - name: orders
+        description: "Order lifecycle data / 订单生命周期数据"
+        columns:
+          - name: order_id
+            description: "Primary key / 主键"
+          - name: customer_id
+            description: "Foreign key to customers / 客户表外键"
+          - name: order_status
+            description: "Order status / 订单状态"
+          - name: order_purchase_timestamp
+            description: "Purchase timestamp / 购买时间戳"
+
+      - name: order_items
+        description: "Order item details / 订单商品明细"
+        columns:
+          - name: order_id
+            description: "Foreign key to orders / 订单表外键"
+          - name: order_item_id
+            description: "Item sequence number within order / 订单内商品序号"
+          - name: product_id
+            description: "Foreign key to products / 商品表外键"
+          - name: seller_id
+            description: "Foreign key to sellers / 卖家表外键"
+          - name: price
+            description: "Product price / 商品价格"
+          - name: freight_value
+            description: "Freight value / 运费"
+
+      - name: order_payments
+        description: "Order payment details / 订单支付明细"
+        columns:
+          - name: order_id
+            description: "Foreign key to orders / 订单表外键"
+          - name: payment_sequential
+            description: "Payment sequence number / 支付序号"
+          - name: payment_type
+            description: "Payment method (credit_card, debit_card, boleto, voucher) / 支付方式"
+          - name: payment_installments
+            description: "Number of installments / 分期付款次数"
+          - name: payment_value
+            description: "Payment value / 支付金额"
+
+      - name: order_reviews
+        description: >
+          Order review data from Olist.
+          Note: review_id may contain duplicates in the raw source.
+          ODS preserves all raw rows without deduplication.
+          Olist 订单评价数据。
+          注意：review_id 在原始数据中可能重复。
+          ODS 保留所有原始行，不做去重。
+        columns:
+          - name: review_id
+            description: "Review ID (may have duplicates) / 评价 ID（可能重复）"
+          - name: order_id
+            description: "Foreign key to orders / 订单表外键"
+          - name: review_score
+            description: "Review score (1-5) / 评价分数（1-5）"
+
+      - name: products
+        description: "Product information / 商品信息"
+        columns:
+          - name: product_id
+            description: "Primary key / 主键"
+          - name: product_category_name
+            description: "Product category (Portuguese) / 商品类目（葡萄牙语）"
+          - name: product_name_lenght
+            description: "Length of product name (Olist original field name) / 商品名称长度（Olist 原始字段名）"
+
+      - name: sellers
+        description: "Seller information / 卖家信息"
+        columns:
+          - name: seller_id
+            description: "Primary key / 主键"
+          - name: seller_zip_code_prefix
+            description: "Zip code prefix / 邮编前缀"
+          - name: seller_city
+            description: "Seller city / 卖家城市"
+          - name: seller_state
+            description: "Seller state (two-letter code) / 卖家州（两字母代码）"
+
+      - name: geolocation
+        description: "Geolocation data for zip codes / 邮编地理位置数据"
+        columns:
+          - name: geolocation_zip_code_prefix
+            description: "Zip code prefix / 邮编前缀"
+          - name: geolocation_lat
+            description: "Latitude / 纬度"
+          - name: geolocation_lng
+            description: "Longitude / 经度"
+          - name: geolocation_city
+            description: "City name / 城市名"
+          - name: geolocation_state
+            description: "State code / 州代码"
+
+      - name: product_category_translation
+        description: "Product category name translation (Portuguese to English) / 商品类目翻译（葡萄牙语到英语）"
+        columns:
+          - name: product_category_name
+            description: "Category name in Portuguese / 葡萄牙语类目名"
+          - name: product_category_name_english
+            description: "Category name in English / 英语类目名"

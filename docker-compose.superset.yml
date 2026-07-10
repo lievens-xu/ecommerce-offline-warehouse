@@ -1,0 +1,39 @@
+# Superset Docker Compose for E-Commerce Warehouse Dashboard
+# Superset 电商数仓看板 Docker Compose
+#
+# This compose file defines a single Superset service connected
+# to the existing PostgreSQL warehouse.
+# 本 compose 文件定义连接到现有 PostgreSQL 数仓的 Superset 服务。
+#
+# PostgreSQL is expected to be running separately via:
+# PostgreSQL 应已通过以下命令独立运行：
+#   docker compose -f docker-compose.postgres.yml up -d
+#
+
+services:
+  superset:
+    build:
+      context: ./superset
+      dockerfile: Dockerfile
+    image: ecommerce_warehouse_superset:latest
+    container_name: ecommerce_warehouse_superset
+    ports:
+      - "8088:8088"
+    env_file:
+      - ./superset/.env
+    volumes:
+      # Persist Superset metadata database / 持久化 Superset 元数据库
+      - superset_data:/app/superset_home
+      # Mount Superset configuration for live updates if needed
+      # 挂载 Superset 配置（如需实时更新）
+      - ./superset/superset_config.py:/app/superset_config.py:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8088/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  superset_data:
+    name: ecommerce_warehouse_superset_data

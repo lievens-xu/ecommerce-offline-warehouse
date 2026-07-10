@@ -1,0 +1,2 @@
+﻿table_name,snapshot_date,customer_count,repeat_customer_count,avg_recency_days,avg_frequency,avg_monetary,segment_count,generated_at
+ads_customer_rfm,2018-09-04,94990,2888,243.4,1.034,165.69,8,2026-07-10 20:03:56
